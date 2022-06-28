@@ -16,13 +16,13 @@ populateTextArea();
 function onFormSubmit(e) {
     e.preventDefault();
     refs.form.reset();
-    console.log(localStorage.getItem(LOCALSTORAGE_KEY));
+    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
     localStorage.removeItem(LOCALSTORAGE_KEY);
         
 }
 
 function onEmailInput(e) {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const valueFromStorage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY))
     const message = {
         email: e.target.value,
@@ -33,11 +33,12 @@ function onEmailInput(e) {
     }
 
 function onTextAreaInput(e) {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const valueFromStorage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY, ))
     const message = {
         email: valueFromStorage?valueFromStorage.email:``,
         message: e.target.value,
+        
     };
 
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(message));
