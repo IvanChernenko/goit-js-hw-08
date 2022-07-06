@@ -51,7 +51,7 @@ function populateTextArea() {
         };
             const getMessage = savedMessage.message;
             const getMail = savedMessage.email;
-            refs.textarea.value = getMessage;
+            refs.textArea.value = getMessage;
             refs.input.value = getMail;
     }
     catch {
